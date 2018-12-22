@@ -1,60 +1,55 @@
-//Dijkstra
+//BFS, no Dijkstra
 #include <iostream>
+#include <queue>
+#include <vector>
 using namespace std;
-
-struct Pointer{
-    int to;
-    int dis;
-    struct Pointer* next;
+struct node
+{
+    int x, y;
 };
+vector<int> graph[200000];
+
+int Bfs(int in1, int in2, int n){
+    int e[200000];
+    queue<node> q;
+    struct node no;no.x=in1;no.y=0;
+    q.push(no);
+    for(int i=0;i<n;i++) e[i]=0;
+    e[in1]=1;
+    while (!q.empty()) {
+        int v=q.front().x;
+        int dis=q.front().y;
+        q.pop();
+        auto it=graph[v].begin();
+        while (it!=graph[v].end()) {
+            if ((*it)==in2) {
+                return dis;
+            }else if(e[*it]==0){
+                e[*it]=1;
+                struct node no1; no1.x=*it; no1.y=dis+1;
+                q.push(no1);
+            }
+            it++;
+        }
+    }
+    return -1;
+}
 
 int main() {
     int n,m;
     int in1,in2,query;
     cin>>n>>m;
-    struct Pointer relation[200000];//不允许使用输入值来初始化
-    struct Pointer* it;
-    int e[200000];
     for (int i=0; i<m; i++) {
         cin>>in1>>in2;
-        //
-        it=&(relation[in1]);
-        while ((*it).next!=NULL) {
-            it=(*it).next;
-        }
-        struct Pointer _new; _new.to=in2; _new.dis=1;
-        (*it).next=&(_new);
-        //
-        it=&(relation[in2]);
-        while ((*it).next!=NULL) {
-            it=(*it).next;
-        }
-        struct Pointer _new1; _new1.to=in1; _new1.dis=1;
-        (*it).next=&(_new1);
+        graph[in1].push_back(in2);
+        graph[in2].push_back(in1);
     }
     cin>>query;
     while (query>0){
         cin>>in1>>in2;
-        for(int i=0;i<n;i++) relation[i].to=-1;
-        for(int i=0;i<n;i++) e[i]=-1;
-        e[in1]=0;
-        relation[in1].to=1;
-        it=&relation[in1];
-        while ((*it).next!=NULL) {
-            it=(*it).next;
-            e[(*it).to]=(*it).dis;
-        }
-        for (int i=1; i<n; i++) {
-            int y=0;
-            for (int j=0; j<n; j++) if(relation[j].to==0&&e[j]<e[y]){ y=j;}
-            relation[y].to=1;
-            it=&relation[y];
-            while ((*it).next!=NULL) {
-                it=(*it).next;
-                if(e[y]+(*it).dis<e[(*it).to]) e[(*it).to]=e[y]+(*it).dis;
-            }
-        }
-        cout<<e[in2]<<endl;
+        if (in1==in2) {
+            cout<<0<<endl;
+        }else cout<<Bfs(in1,in2,n)<<endl;
         query--;
     }
     return 0;
