@@ -3,41 +3,31 @@
 using namespace std;
 
 //Greedy version
-int like[100][100];
-int feed[100];
-int m=0,n=0;
-int k=0;
-vector<int> comb[100];
-
-bool feed_this(int remain,int p);
-int get_comb(int p, int _k);
 
 int main() {
-    while (cin>>m) {
-        cin>>n;
+    int like[100][100];
+    int feed[100];
+    int m=0,n=0,k=0,flag=0;
+    while (cin>>m>>n) {
         for (int i=0; i<m; i++)
             for (int j=0; j<n; j++) cin>>like[i][j];
         cin>>k;
-        for (int i=0; i<n; i++) feed[i]=0;
-        feed_this(n,0);
-    }
-    return 0;
-}
-
-bool feed_this(int remain,int p){
-    get_comb(p,0);
-    
-    return false;
-}
-
-int get_comb(int p, int _k){
-    if (_k==k) {
-        return 0;
-    }
-    for (int i=0; i<m; i++) {
-        if (like[p][i]==1){
-            comb[p].push_back(i);          
+        for (int i=0; i<m; i++) feed[i]=k;
+        for (int i=0; i<n; i++) {
+            flag=0;
+            for (int j=0; j<m; j++) {
+                if (like[j][i]==1&&feed[j]>0) {
+                    feed[j]--;
+                    flag=1;
+                    break;
+                }
+            }
+            if (flag==0) {
+                cout<<"No"<<endl;
+                break;
+            }
         }
+        if(flag==1) cout<<"Yes"<<endl;
     }
     return 0;
 }
