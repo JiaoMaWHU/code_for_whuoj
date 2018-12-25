@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF0DAF5221D23540000D4A07 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF0DAF5121D23540000D4A07 /* main.cpp */; };
 		CF196E2621C921CF00448CEF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF196E2521C921CF00448CEF /* main.cpp */; };
 		CF1A0E5121CD2B050081477C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF1A0E5021CD2B050081477C /* main.cpp */; };
 		CF480DF721C4B198004E8EBF /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF480DF621C4B198004E8EBF /* main.cpp */; };
@@ -17,6 +18,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		CF0DAF4D21D23540000D4A07 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		CF196E2121C921CF00448CEF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,6 +93,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CF0DAF4F21D23540000D4A07 /* ac-8 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ac-8"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF0DAF5121D23540000D4A07 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		CF196E2321C921CF00448CEF /* ac-7 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ac-7"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF196E2521C921CF00448CEF /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		CF1A0E4E21CD2B050081477C /* ac-6 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "ac-6"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,6 +112,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CF0DAF4C21D23540000D4A07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF196E2021C921CF00448CEF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,6 +171,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF0DAF5021D23540000D4A07 /* ac-8 */ = {
+			isa = PBXGroup;
+			children = (
+				CF0DAF5121D23540000D4A07 /* main.cpp */,
+			);
+			path = "ac-8";
+			sourceTree = "<group>";
+		};
 		CF196E2421C921CF00448CEF /* ac-7 */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +221,7 @@
 				CFC7B9CE21C7BDB000A523AC /* ac-5 */,
 				CF196E2421C921CF00448CEF /* ac-7 */,
 				CF1A0E4F21CD2B050081477C /* ac-6 */,
+				CF0DAF5021D23540000D4A07 /* ac-8 */,
 				CF91C38221B295F800FDB98B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -208,6 +236,7 @@
 				CFC7B9CD21C7BDB000A523AC /* ac-5 */,
 				CF196E2321C921CF00448CEF /* ac-7 */,
 				CF1A0E4E21CD2B050081477C /* ac-6 */,
+				CF0DAF4F21D23540000D4A07 /* ac-8 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -239,6 +268,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CF0DAF4E21D23540000D4A07 /* ac-8 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF0DAF5521D23540000D4A07 /* Build configuration list for PBXNativeTarget "ac-8" */;
+			buildPhases = (
+				CF0DAF4B21D23540000D4A07 /* Sources */,
+				CF0DAF4C21D23540000D4A07 /* Frameworks */,
+				CF0DAF4D21D23540000D4A07 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ac-8";
+			productName = "ac-8";
+			productReference = CF0DAF4F21D23540000D4A07 /* ac-8 */;
+			productType = "com.apple.product-type.tool";
+		};
 		CF196E2221C921CF00448CEF /* ac-7 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CF196E2921C921CF00448CEF /* Build configuration list for PBXNativeTarget "ac-7" */;
@@ -367,6 +413,9 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "角马";
 				TargetAttributes = {
+					CF0DAF4E21D23540000D4A07 = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					CF196E2221C921CF00448CEF = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -409,11 +458,20 @@
 				CFC7B9CC21C7BDB000A523AC /* ac-5 */,
 				CF196E2221C921CF00448CEF /* ac-7 */,
 				CF1A0E4D21CD2B050081477C /* ac-6 */,
+				CF0DAF4E21D23540000D4A07 /* ac-8 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CF0DAF4B21D23540000D4A07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF0DAF5221D23540000D4A07 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CF196E1F21C921CF00448CEF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -473,6 +531,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		CF0DAF5321D23540000D4A07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CF0DAF5421D23540000D4A07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		CF196E2721C921CF00448CEF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -699,6 +773,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CF0DAF5521D23540000D4A07 /* Build configuration list for PBXNativeTarget "ac-8" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF0DAF5321D23540000D4A07 /* Debug */,
+				CF0DAF5421D23540000D4A07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CF196E2921C921CF00448CEF /* Build configuration list for PBXNativeTarget "ac-7" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
