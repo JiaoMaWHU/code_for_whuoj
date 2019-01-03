@@ -1,7 +1,8 @@
 #include <iostream>
-#include<stack>
+#include <stack>
+#include <string>
 using namespace std;
-#define MAX 20000;
+#define MAX 53356;
 
 typedef struct{
     int d;//到达某点的最短路径距离
@@ -9,11 +10,11 @@ typedef struct{
 }record;
 typedef struct{
     int cost;
-    char elixir;
+    string elixir;
 }path;
 
 int _path[4000][5];
-char _elixir[4000];
+string _elixir[4000];
 path graph[100][100];
 record dis[100];
 bool state[100];
@@ -28,9 +29,9 @@ int main() {
         for (int i=0; i<m; i++){
             if (_path[i][2]<plovers&&_path[i][3]<slovers) {
                 graph[_path[i][0]][_path[i][1]].cost=_path[i][4];
-                graph[_path[i][0]][_path[i][1]].elixir=_elixir[i];
+                graph[_path[i][0]][_path[i][1]].elixir = _elixir[i];
                 graph[_path[i][1]][_path[i][0]].cost=_path[i][4];
-                graph[_path[i][1]][_path[i][0]].elixir=_elixir[i];
+                graph[_path[i][1]][_path[i][0]].elixir = _elixir[i];
             }
         }
         for (int i=0; i<n; i++) {
@@ -55,7 +56,7 @@ int main() {
             }
             state[y]=1;
             for (int j=0; j<n; j++) {
-                if (graph[y][j].cost!=-1&&dis[j].d>graph[y][j].cost+dis[y].d) {
+                if (graph[y][j].cost!=-1&&dis[j].d>graph[y][j].cost+dis[y].d&&state[j]!=1) {
                     dis[j].d=graph[y][j].cost+dis[y].d;
                     dis[j].pre=y;
                 }
@@ -76,7 +77,6 @@ int main() {
             cout<<graph[i][j].elixir;
             i=j;
         }
-        cout<<endl;
         cout<<endl;
     }
     return 0;
