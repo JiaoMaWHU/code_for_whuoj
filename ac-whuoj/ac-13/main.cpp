@@ -3,6 +3,7 @@
 using namespace std;
 
 int main() {
+    ios_base::sync_with_stdio(false);
     string s[100];
     for (int i=0;i<100;i++) s[i].clear();
     while (cin>>s[0]) {
