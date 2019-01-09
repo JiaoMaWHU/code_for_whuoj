@@ -1,1 +1,1 @@
-# code_for_whuoj
+# code_of_whuoj
