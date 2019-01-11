@@ -2,6 +2,7 @@
 #include <vector>
 #include <set>
 #include <algorithm>
+#include <stack>
 using namespace std;
 
 // ~N^lgN,43ms
